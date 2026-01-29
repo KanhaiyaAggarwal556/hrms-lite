@@ -22,19 +22,6 @@ class EmployeeCreate(EmployeeBase):
 class AttendanceCreate(AttendanceBase):
     employee_id: str
 
-class EmployeeResponse(EmployeeBase):
-    id: Optional[PyObjectId] = Field(alias="_id", default=None)
-
-    class Config:
-        populate_by_name = True
-        json_schema_extra = {
-            "example": {
-                "employee_id": "EMP001",
-                "full_name": "John Doe",
-                "email": "john@example.com",
-                "department": "Engineering"
-            }
-        }
 
 class AttendanceResponse(AttendanceBase):
     id: Optional[PyObjectId] = Field(alias="_id", default=None)
